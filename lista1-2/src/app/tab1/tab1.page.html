@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Projeto 1 - Mobile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <div class="button-container">
+    <ion-button id="button-alert">Alerta</ion-button>
+<ion-alert
+  trigger="button-alert"
+  header="Título"
+  message="Nome Sobrenome - Matrícula"
+  [buttons]="alertButtons"
+></ion-alert>
+  </div>
+</ion-content>
