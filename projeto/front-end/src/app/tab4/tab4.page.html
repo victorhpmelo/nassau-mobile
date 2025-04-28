@@ -1,0 +1,8 @@
+<ion-header><ion-toolbar><ion-title>Relatório</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <p>Total de senhas: {{ relatorio?.total }}</p>
+  <p>Atendidas: {{ relatorio?.atendidas }}</p>
+  <p *ngFor="let tipo of ['SP', 'SG', 'SE']">
+    Senhas {{ tipo }}: {{ relatorio?.porTipo[tipo] || 0 }}
+  </p>
+</ion-content>

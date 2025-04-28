@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Password {
+  id Int @id @default(autoincrement())
+  type Type
+  numberPass Int @unique
+  emitDate DateTime @default(now())
+  appointDate DateTime?
+  window Int?
+  attended Boolean @default(false)
+
+  LogPanel LogPanel[]
+}
+
+enum Type {
+  SP
+  SG
+  SE
+}
+
+model LogPanel {
+  id Int @id @default(autoincrement())
+  passwordId Int
+  password Password @relation(fields: [passwordId], references: [id])
+  callDate DateTime @default(now())
+}

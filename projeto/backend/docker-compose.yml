@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: mob
+      POSTGRES_PASSWORD: mob
+      POSTGRES_DB: mobileproject
+    ports:
+      - "54320:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
+  

@@ -1,0 +1,8 @@
+<ion-header><ion-toolbar><ion-title>Atendimento</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="chamar()">Chamar Próxima Senha</ion-button>
+  <div *ngIf="senha">
+    <h2>Senha: {{ senha.numero }}</h2>
+    <p>Guichê: {{ senha.window }}</p>
+  </div>
+</ion-content>
